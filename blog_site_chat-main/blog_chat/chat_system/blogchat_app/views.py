@@ -139,19 +139,6 @@ def my_blog_view(request):
     context['my_blog_queryset'] = my_blog_queryset
 
     return render(request,'my_blog.html',context)
-
-def edit_profile_view(request):
-    context = {}
-    if request.method == 'POST':
-        form = ProfileForm(request.POST)
-        if form.is_valid():
-            profile = form.save()
-            return redirect('edit_profile.html')
-    else:
-        form = ProfileForm()
-        context['profile_form']=form
-    return render(request, 'edit_profile.html',)
-
 def searchbar(request):
     if request.method == 'GET':
         context = {}

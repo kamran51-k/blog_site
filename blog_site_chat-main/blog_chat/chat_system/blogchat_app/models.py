@@ -28,6 +28,7 @@ class PostModel(models.Model):
     image = models.ImageField(upload_to='images_uploaded',default='images_uploaded/925667.jpg',null=True,blank=True)  
     category1 = models.ForeignKey('CategoryModel',models.CASCADE,null=True,blank=True)
     date = models.DateField(auto_now=True)
+    room_code = models.IntegerField(null=True,blank=True)
     def get_absolute_url(self):
        return reverse("my_blog_page")  
 
